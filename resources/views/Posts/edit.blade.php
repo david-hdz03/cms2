@@ -40,7 +40,7 @@
                         </div>
                         <div class="form-group">
                             <label for="fec_pub">Fecha de Publicación</label>
-                            <input type="datetime-local" class="form-control" id="fec_pub" name="fec_pub" value="{{ $post->fec_pub->format('Y-m-d\TH:i') }}">
+                            <input type="datetime-local" class="form-control" id="fec_pub" name="fec_pub" value="{{ $post->fec_pub ? \Carbon\Carbon::parse($post->fec_pub)->format('Y-m-d\TH:i') : '' }}">
                         </div>
                         <div class="form-group">
                             <label for="estatus">Estatus</label>

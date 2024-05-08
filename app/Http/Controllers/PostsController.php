@@ -72,7 +72,7 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        $post = EtiquetasModel::findOrFail($id);
+        $post = PostsModel::findOrFail($id);
         return View('Posts.edit',compact('post'));
     }
 
@@ -86,7 +86,7 @@ class PostsController extends Controller
     public function update(Request $request, $id)
     {
         $postRequest = request()->except(['_token', '_method']);
-        EtiquetasModel::where('id', '=', $id)->update($postRequest);
+        PostsModel::where('id', '=', $id)->update($postRequest);
         return redirect('posts')->with('Mensaje','Actualización realizada al registro');
     }
 
